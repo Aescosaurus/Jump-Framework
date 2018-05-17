@@ -34,8 +34,8 @@ Game::Game( MainWindow& wnd )
 		{
 			if( Map::Get( x,y ) == '1' )
 			{
-				plats.emplace_back( Platform( { x * 64,
-					y * 64 } ) );
+				plats.emplace_back( Platform( { x * Platform
+					::Size,y * Platform::Size } ) );
 			}
 		}
 	}
@@ -51,7 +51,8 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	const float dt = FrameTimer::Mark();
+	float dt = FrameTimer::Mark();
+	if( dt > 0.5f ) dt = 0.0f;
 
 	pl.Update( wnd.kbd,dt );
 	pl.CheckHits( plats );

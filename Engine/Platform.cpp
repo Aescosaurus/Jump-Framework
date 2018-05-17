@@ -1,15 +1,16 @@
 #include "Platform.h"
+#include "Graphics.h"
 
 Platform::Platform( const Vei2& pos )
 	:
 	pos( pos ),
-	hitbox( pos,size,size )
+	hitbox( pos,float( Size ),float( Size ) )
 {
 }
 
 void Platform::Draw( Graphics& gfx ) const
 {
-	gfx.DrawRect( pos.x,pos.y,size,size,Colors::Gray );
+	gfx.DrawRect( pos.x,pos.y,Size,Size,Colors::Gray );
 
 	// gfx.DrawHitbox( hitbox );
 }

@@ -25,7 +25,7 @@ void Player::Update( const Keyboard& kbd,float dt )
 
 	vel *= slowdownFactor;
 
-	grav += gravAcc;
+	grav += gravAcc * dt;
 	pos.y += grav * dt;
 
 	if( kbd.KeyIsPressed( 'W' ) && canJump )

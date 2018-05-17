@@ -4,6 +4,7 @@
 #include "Graphics.h"
 #include <fstream>
 #include <cassert>
+#include "Platform.h"
 
 class Map
 {
@@ -13,8 +14,8 @@ public:
 	static char Get( int index );
 public:
 	static constexpr int Width = 1 + Graphics
-		::ScreenWidth / 64;
+		::ScreenWidth / Platform::Size;
 	static constexpr int Height = 1 + Graphics
-		::ScreenHeight / 64;
+		::ScreenHeight / Platform::Size;
 	static std::vector<char> Data;
 };

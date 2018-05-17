@@ -2,18 +2,18 @@
 
 #include "Vec2.h"
 #include "Rect.h"
-#include "Graphics.h"
 
 class Platform
 {
 public:
 	Platform( const Vei2& pos );
 
-	void Draw( Graphics& gfx ) const;
+	void Draw( class Graphics& gfx ) const;
 
 	const Rect& GetRect() const;
+public:
+	static constexpr int Size = 32;
 private:
 	const Vei2 pos;
-	static constexpr int size = 64;
 	const Rect hitbox;
 };

@@ -27,6 +27,7 @@
 #include "Surface.h"
 #include "Rect.h"
 #include <cassert>
+#include "Platform.h"
 
 class Graphics
 {
@@ -196,7 +197,7 @@ private:
 	D3D11_MAPPED_SUBRESOURCE							mappedSysBufferTexture;
 	Color*                                              pSysBuffer = nullptr;
 public:
-	static constexpr int ScreenWidth = 64 * 16;
-	static constexpr int ScreenHeight = 64 * 12;
+	static constexpr int ScreenWidth = Platform::Size * 16;
+	static constexpr int ScreenHeight = Platform::Size * 12;
 	static RectI GetScreenRect();
 };

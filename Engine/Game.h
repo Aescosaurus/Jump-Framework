@@ -47,7 +47,6 @@ private:
 	/********************************/
 	/*  User Variables              */
 	Player pl = Vei2( 150,150 );
-	// Platform plat = Vei2( 50,524 );
 	std::vector<Platform> plats;
 	/********************************/
 };

@@ -48,9 +48,9 @@ private:
 	static constexpr float maxSpeed = speed * 2.5f;
 	static constexpr float slowdownFactor = 0.96f;
 
-	static constexpr float gravAcc = 6.9f;
+	static constexpr float gravAcc = 6.9f / 0.05f;
 	float grav = 0.0f;
-	static constexpr int jumpPower = 265;
+	static constexpr int jumpPower = 202;
 	bool jumping = false;
 	bool canJump = false;
 };
